@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.0RC2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Text_PathNavigator</name>
+ <channel>pear.php.net</channel>
+ <summary>Facilitates navigation of path strings</summary>
+ <description>The Text_PathNavigator class facilitates navigation of path strings.
+ </description>
+ <lead>
+  <name>Denny Shimkoski</name>
+  <user>denny</user>
+  <email>denny@bytebrite.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2009-09-21</date>
+ <time>00:15:55</time>
+ <version>
+  <release>0.1.0dev2</release>
+  <api>0.1.0dev2</api>
+ </version>
+ <stability>
+  <release>devel</release>
+  <api>devel</api>
+ </stability>
+ <license>MIT License</license>
+ <notes>Changes since the last development release:
+
+- Completely re-coded for PHP 5 (implements ArrayAccess, Countable, Iterator)
+
+- Added regex-based begin(), end(), and between() methods
+
+- Added relativeTo() and cd() methods to allow traversal of path strings
+
+- Wrote unit tests
+ </notes>
+ <contents>
+ <dir baseinstalldir="Text" name="/">
+    <file role="php" name="PathNavigator.php">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <dir name="tests">
+      <file role="test" name="PathNavigatorTest.php" />
+    </dir>
+ </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.5.4</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease />
+</package>
