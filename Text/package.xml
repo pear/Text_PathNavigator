@@ -11,12 +11,11 @@ http://pear.php.net/dtd/package-2.0.xsd">
  <lead>
   <name>Denny Shimkoski</name>
   <user>denny</user>
-  <email>denny@bytebrite.com</email>
+  <email>bytebrite@gmail.com</email>
   <active>yes</active>
  </lead>
- <date>2009-09-21</date>
- <time>00:15:55</time>
- <version>
+ <date>2009-09-28</date>
+  <version>
   <release>0.1.0dev2</release>
   <api>0.1.0dev2</api>
  </version>
@@ -41,6 +40,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
         <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
     <dir name="tests">
+      <file role="test" name="AllTests.php" />
       <file role="test" name="PathNavigatorTest.php" />
     </dir>
  </dir> <!-- / -->

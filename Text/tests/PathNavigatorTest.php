@@ -1,6 +1,19 @@
 <?php
 
-require_once 'PHPUnit/Framework.php';
+/**
+ * Unit tests for Text_PathNavigator
+ *
+ * PHP version 5
+ *
+ * @category  Text
+ * @package   PathNavigator
+ * @author    Denny Shimkoski <bytebrite@gmail.com>
+ * @license   http://www.opensource.org/licenses/mit-license.html MIT
+ * @version   SVN: $Id$
+ * @link      http://pear.php.net/package/Text_PathNavigator
+ */
+ 
+require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'Text/PathNavigator.php';
 
 class PathNavigatorTest extends PHPUnit_Framework_TestCase {
@@ -51,11 +64,6 @@ class PathNavigatorTest extends PHPUnit_Framework_TestCase {
     }
     function testExtraSlashesAreTrimmed() {
         $this->assertEquals('path/sub', (string)new Text_PathNavigator('///path/sub//', '/'));
-    }
-    function testArrayAccess() {
-        $uri = new Text_PathNavigator('/users/edit/1', '/');
-        $this->assertEquals('users', $uri[0]);
-        $this->assertEquals('edit', $uri[1]);
     }
     function testP1RelativeToP2IsCorrect() {
         $this->assertEquals('../../../client1/files/woot', (string)$this->p1->relativeTo($this->p2));

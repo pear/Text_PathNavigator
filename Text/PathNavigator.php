@@ -91,6 +91,10 @@ class Text_PathNavigator implements ArrayAccess, Countable, Iterator
      */
     protected function normalizePath($path)
     {
+        if (empty($path)) {
+            return null;
+        }
+        
         if (is_array($path)) {
             $path = implode($this->slash, $path);
         }
@@ -307,7 +311,7 @@ class Text_PathNavigator implements ArrayAccess, Countable, Iterator
      */
     public function offsetGet($i)
     {
-        return $this->segments[$i];
+        return isset($this->segments[$i]) ? $this->segments[$i] : null;
     }
     /**
      * Throws Exception for the purpose of immutability (ArrayAccess implementation)
