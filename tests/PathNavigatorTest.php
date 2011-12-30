@@ -13,7 +13,16 @@
  * @link      http://pear.php.net/package/Text_PathNavigator
  */
  
-require_once 'PHPUnit/Framework/TestCase.php';
+if ($fp = @fopen('PHPUnit/Autoload.php', 'r', true)) {
+    require_once 'PHPUnit/Autoload.php';
+} elseif ($fp = @fopen('PHPUnit/Framework.php', 'r', true)) {
+    require_once 'PHPUnit/Framework.php';
+    require_once 'PHPUnit/TextUI/TestRunner.php';
+} else {
+    die('skip could not find PHPUnit');
+}
+fclose($fp);
+
 require_once 'Text/PathNavigator.php';
 
 class PathNavigatorTest extends PHPUnit_Framework_TestCase {

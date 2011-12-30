@@ -17,12 +17,15 @@ if (!defined('PHPUnit_MAIN_METHOD')) {
     define('PHPUnit_MAIN_METHOD', 'Text_PathNavigator_AllTests::main');
 }
 
-require_once 'PHPUnit/Framework.php';
-require_once 'PHPUnit/TextUI/TestRunner.php';
-
-chdir(dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR);
-
-require_once dirname(__FILE__) . '/PathNavigatorTest.php';
+if ($fp = @fopen('PHPUnit/Autoload.php', 'r', true)) {
+    require_once 'PHPUnit/Autoload.php';
+} elseif ($fp = @fopen('PHPUnit/Framework.php', 'r', true)) {
+    require_once 'PHPUnit/Framework.php';
+    require_once 'PHPUnit/TextUI/TestRunner.php';
+} else {
+    die('skip could not find PHPUnit');
+}
+fclose($fp);
 
 class Text_PathNavigator_AllTests
 {
@@ -34,7 +37,10 @@ class Text_PathNavigator_AllTests
     public static function suite()
     {
         $suite = new PHPUnit_Framework_TestSuite('Text_PathNavigator package');
-        $suite->addTestSuite('PathNavigatorTest');
+
+        $dir = new GlobIterator(dirname(__FILE__) . '/*Test.php');
+        $suite->addTestFiles($dir);
+
         return $suite;
     }
 }
