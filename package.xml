@@ -27,8 +27,14 @@
   <provides type="function" name="Text_PathNavigator::toArray" />
   <provides type="function" name="Text_PathNavigator::slice" />
   <filelist>
-   <file role="php" baseinstalldir="Text" md5sum="62a540242cfd92a7b8add59fa503a212" name="PathNavigator.php"/>
-   <file role="doc" baseinstalldir="Text" md5sum="6eece7709e8c55cc2e0387b17cb3226e" name="examples/path.php"/>
+   <dir name="/">
+    <dir name="Text">
+     <file role="php" md5sum="62a540242cfd92a7b8add59fa503a212" name="PathNavigator.php"/>
+    </dir> <!-- /Text -->
+    <file role="doc" baseinstalldir="Text" md5sum="6eece7709e8c55cc2e0387b17cb3226e" name="examples/path.php"/>
+    <file role="test" baseinstalldir="Text" name="tests/AllTests.php"/>
+    <file role="test" baseinstalldir="Text" name="tests/PathNavigatorTest.php"/>
+   </dir> <!-- / -->
   </filelist>
  </release>
 </package>
