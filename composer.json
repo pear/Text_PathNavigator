@@ -1,0 +1,31 @@
+{
+    "authors": [
+        {
+            "email": "denny@bytebrite.com",
+            "name": "Denny Shimkoski",
+            "role": "Lead"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Text": "./"
+        }
+    },
+    "description": "More info available on: http://pear.php.net/package/Text_PathNavigator",
+    "include-path": [
+        "./"
+    ],
+    "license": "MIT License",
+    "name": "pear/text_pathnavigator",
+    "support": {
+        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Text_PathNavigator",
+        "source": "https://github.com/pear/Text_PathNavigator"
+    },
+    "type": "library",
+    "require": {
+        "pear/pear_exception": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
